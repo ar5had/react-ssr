@@ -5,7 +5,8 @@
     "forever": "^0.15.3",
     "path": "^0.12.7",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-router": "3"
   },
   "name": "react-ssr",
   "version": "1.0.0",
