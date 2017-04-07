@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.15.2",
+    "forever": "^0.15.3",
+    "path": "^0.12.7",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "name": "react-ssr",
+  "version": "1.0.0",
+  "description": "App using react server-side rendering",
+  "main": "server.js",
+  "repository": "https://github.com/arshdkhn1/react-ssr.git",
+  "author": "arshdkhn1 <arshdkhn1@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-react": "^6.23.0",
+    "babel-register": "^6.24.0",
+    "webpack": "^2.3.3"
+  }
+}
