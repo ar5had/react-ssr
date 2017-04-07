@@ -1,9 +1,6 @@
-const React = require('react');
 const ReactDOM = require('react-dom');
-const Component = require('./Component.js');
-
-const props = window.PROPS;
+const routes = require('./routes/routes');
 
 ReactDOM.render(
-  React.createElement(Component, props), document
+  routes, document
 );

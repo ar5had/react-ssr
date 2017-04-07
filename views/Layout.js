@@ -1,23 +1,34 @@
 const React = require('react');
+const Link = require('react-router').Link;
 
 module.exports = React.createClass({
     _handleClick: function(){
         alert();
     },
     render: function(){
+        const custom = this.props.custom;
         return(
             <html>
                 <head>
-                    <title>{this.props.title}</title>
+                    <title>{custom.title}</title>
                     <link rel='stylesheet' href='/styles.css' />
                 </head>
                 <body>
                     <div>
-                        <h1>{this.props.title}</h1>
+                        <h1>{custom.title}</h1>
                         <button onClick={this._handleClick}>Click Me</button>
+                        <ul>
+                            <li>
+                                <Link to='/'>Home</Link>
+                            </li>
+                            <li>
+                                <Link to='/about'>About</Link>
+                            </li>
+                        </ul>
                     </div>
+                    { this.props.children }
                     <script dangerouslySetInnerHTML={{
-                        __html : `window.PROPS = ${JSON.stringify(this.props)}`
+                        __html : `window.PROPS = ${JSON.stringify(custom)}`
                     }} />
                     <script src='/bundle.js' />
                 </body>
