@@ -9462,7 +9462,7 @@ module.exports = React.createClass({
                 React.createElement(
                     'title',
                     null,
-                    'Universal App with React'
+                    this.props.title
                 ),
                 React.createElement('link', { rel: 'stylesheet', href: '/styles.css' })
             ),
@@ -9475,22 +9475,17 @@ module.exports = React.createClass({
                     React.createElement(
                         'h1',
                         null,
-                        'Hello World!'
-                    ),
-                    React.createElement(
-                        'p',
-                        null,
-                        'Isn\'t server-side rendering remarkable?'
+                        this.props.title
                     ),
                     React.createElement(
                         'button',
-                        { onClick: () => {
-                                console.log(this);
-                                this._handleClick();
-                            } },
+                        { onClick: this._handleClick },
                         'Click Me'
                     )
                 ),
+                React.createElement('script', { dangerouslySetInnerHTML: {
+                        __html: `window.PROPS = ${JSON.stringify(this.props)}`
+                    } }),
                 React.createElement('script', { src: '/bundle.js' })
             )
         );
@@ -9515,7 +9510,9 @@ const React = __webpack_require__(52);
 const ReactDOM = __webpack_require__(81);
 const Component = __webpack_require__(80);
 
-ReactDOM.render(React.createElement(Component), document);
+const props = window.PROPS;
+
+ReactDOM.render(React.createElement(Component, props), document);
 
 /***/ }),
 /* 83 */

@@ -8,18 +8,17 @@ module.exports = React.createClass({
         return(
             <html>
                 <head>
-                    <title>Universal App with React</title>
+                    <title>{this.props.title}</title>
                     <link rel='stylesheet' href='/styles.css' />
                 </head>
                 <body>
                     <div>
-                        <h1>Hello World!</h1>
-                        <p>Isn't server-side rendering remarkable?</p>
-                        <button onClick={() => {
-                            console.log(this);
-                            this._handleClick();
-                        }}>Click Me</button>
+                        <h1>{this.props.title}</h1>
+                        <button onClick={this._handleClick}>Click Me</button>
                     </div>
+                    <script dangerouslySetInnerHTML={{
+                        __html : `window.PROPS = ${JSON.stringify(this.props)}`
+                    }} />
                     <script src='/bundle.js' />
                 </body>
             </html>

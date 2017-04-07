@@ -17,8 +17,9 @@ app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
+  const props = { title: 'Universal React' };
   const html = ReactDOMServer.renderToString(
-    React.createElement(Component)
+    React.createElement(Component, props)
   );
   res.send(html);
 });
