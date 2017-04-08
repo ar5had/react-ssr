@@ -1,7 +1,8 @@
 const React = require('react');
 const Link = require('react-router').Link;
+const { connect } = require('react-redux');
 
-module.exports = React.createClass({
+const Layout = React.createClass({
     _handleClick: function(){
         alert();
     },
@@ -36,3 +37,7 @@ module.exports = React.createClass({
         )
     }
 });
+
+const mapStateToProps = state => ({custom: state});
+
+module.exports = connect(mapStateToProps)(Layout);
